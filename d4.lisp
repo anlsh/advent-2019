@@ -1,3 +1,5 @@
+(in-package #:advent2019)
+
 (defun solve-day4 (&optional (numlen 6) (lbound 367479) (ubound 893698))
   ;; /u/oantolin has a super neat solution
   ;; https://topaz.github.io/paste/#XQAAAQAmAgAAAAAAAAAUGQimgx+p6N20AZ3Fh1ZlmBPmNJN1dOYPRMdougQgnb6bJ8fPrxNVrdHt+svDgqkKmdeLmfF7ZsC71EmypPmTARgCeOgO5LdU6xCpd1QnbFRa/O3uxYmXEJrY73kLnKabwlBjDrfXA/jyM0KYTddFygynstLRDNXZ1zp2QeJZ55sEIjfyN6fbOtqrjPp7EsWawhA4JH2v+zTVSj2aHABDuLWNZ4+I8+/vydUUTxg2tCnrykCrjqvq21d7i27HiI7MLiTScyt71XIuRmG+rDOEkDV0ETQxkmdnqjZkO7sGxV24mUGA5JKiZafPo6D8FVh2M+HoJaw64Wtrgc7MmdLU7x6yeHAAadH+JIrRSXeXyosDmlA4h6hkYjUHu//5VXiD

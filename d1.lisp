@@ -1,3 +1,5 @@
+(in-package #:advent2019)
+
 (defun get-fuel (mass-ls)
   (labels ((fuel-for-mass (m)
              (let ((req-fuel (- (floor (/ m 3)) 2)))
@@ -9,6 +11,6 @@
                      mass-ls))))
 
 (defun solve ()
-  (with-open-file (stream "~/Code/advent2019/i1.txt")
+  (with-open-file (stream "inputs/i1.txt")
     (get-fuel (loop for l = (read-line stream nil)
                     while l collect (parse-integer l)))))

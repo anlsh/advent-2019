@@ -1,3 +1,5 @@
+(in-package #:advent2019)
+
 (defun solve-day3 (input-fname)
   (labels ((l1-norm (pos) (+ (abs (car pos)) (abs (cdr pos))))
            (succ (dir pos)
