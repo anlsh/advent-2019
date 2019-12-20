@@ -6,7 +6,7 @@
   :license  "Specify license here"
   :version "0.0.1"
   :serial t
-  :depends-on (#:volt #:split-sequence)
+  :depends-on (#:volt #:split-sequence #:alexandria)
   :components ((:file "package")
                (:file "computer" :depends-on ("package"))
                (:file "d1" :depends-on ("package"))

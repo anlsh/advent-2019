@@ -1,4 +1,5 @@
 (in-package #:advent2019)
+(declaim (optimize (debug 2)))
 
 (defun simulate (in-strm out-strm num-vec)
   (let ((iptr 0)
@@ -26,7 +27,6 @@
                (incf iptr 4))
 
              (mach-read-into-loc ()
-               (setf amodes nil)
                (let ((loc (get-immediate (+ iptr 1))))
                  (setf (aref num-vec loc)
                        (parse-integer (read-line in-strm))))
@@ -38,11 +38,12 @@
                (incf iptr 2))
 
              (mach-jump-on-pred (predicate)
-               (let ((n (get-arg 1))
-                     (loc (get-arg 2)))
-                 (cond
-                   ((funcall predicate n) (incf iptr 3))
-                   (t (setf iptr loc)))))
+               (lambda ()
+                 (let ((n (get-arg 1))
+                       (loc (get-arg 2)))
+                   (cond
+                     ((funcall predicate n) (setf iptr loc))
+                     (t (incf iptr 3))))))
 
              (mach-lt ()
                (let ((n1 (get-arg 1))
