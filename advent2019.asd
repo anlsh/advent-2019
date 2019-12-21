@@ -13,4 +13,5 @@
                (:file "d2" :depends-on ("package" "computer"))
                (:file "d3" :depends-on ("package"))
                (:file "d4" :depends-on ("package"))
-               (:file "d5" :depends-on ("package" "computer"))))
+               (:file "d5" :depends-on ("package" "computer"))
+               (:file "d7" :depends-on ("package" "computer"))))

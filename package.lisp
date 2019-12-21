@@ -2,5 +2,5 @@
 
 (defpackage #:advent2019
   (:use #:cl)
-  (:export #:solve-day2 #:solve-day5)
+  (:export #:solve-day2 #:solve-day5 #:solve-day7)
   )

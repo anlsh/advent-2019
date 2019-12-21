@@ -3,7 +3,8 @@
 
 (defun simulate (in-strm out-strm num-vec)
   (let ((iptr 0)
-        (amodes 0))
+        (amodes 0)
+        ret)
     (labels ((get-immediate (idx) (aref num-vec idx))
              (get-position (idx) (aref num-vec (aref num-vec idx)))
              (get-arg (apos)
@@ -34,7 +35,8 @@
 
              (mach-output ()
                (let ((arg (get-arg 1)))
-                 (format out-strm "~a~%" arg))
+                 (format out-strm "~a~%" arg)
+                 (setf ret arg))
                (incf iptr 2))
 
              (mach-jump-on-pred (predicate)
@@ -73,4 +75,5 @@
                      (6 (mach-jump-on-pred (lambda (x) (zerop x))))
                      (7 #'mach-lt)
                      (8 #'mach-eql)
-                     (99 (lambda ()))))))))
+                     (99 (lambda ()))))))
+    ret))
